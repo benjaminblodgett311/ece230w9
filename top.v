@@ -11,10 +11,10 @@ module top(
      .NotQ(led[1])
  );
 
- wire Adata;
- wire Bdata;
- wire Cdata;
- wire Ddata;
+ wire [7:0] Adata;
+ wire [7:0] Bdata;
+ wire [7:0] Cdata;
+ wire [7:0] Ddata;
 
  demultiplexer data(
      .data(sw[15:8]),
@@ -39,10 +39,10 @@ module top(
      .EnableD(Dbtnc)
  );
 
- wire OutputA;
- wire OutputB;
- wire OutputC;
- wire OutputD;
+ wire [7:0] OutputA;
+ wire [7:0] OutputB;
+ wire [7:0] OutputC;
+ wire [7:0] OutputD;
 
 
  behavioral_d_latch A(
