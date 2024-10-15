@@ -45,28 +45,28 @@ module top(
  wire [7:0] OutputD;
 
 
- behavioral_d_latch A(
+ behavioral_d_latch8 A(
      .Enable(Abtnc),
      .Data(Adata),
      .Q(OutputA)
      
  );
 
- behavioral_d_latch B(
+ behavioral_d_latch8 B(
      .Enable(Bbtnc),
      .Data(Bdata),
      .Q(OutputB)
      
  );
 
- behavioral_d_latch C(
+ behavioral_d_latch8 C(
      .Enable(Cbtnc),
      .Data(Cdata),
      .Q(OutputC)
      
  );
 
- behavioral_d_latch D(
+ behavioral_d_latch8 D(
      .Enable(Dbtnc),
      .Data(Ddata),
      .Q(OutputD)

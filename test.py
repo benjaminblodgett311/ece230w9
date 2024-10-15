@@ -31,5 +31,5 @@ def view_dump():
 
 if __name__ == "__main__":
     execute_test()
-    # Uncomment this line to view your waveform!
-    # view_dump()
+     #Uncomment this line to view your waveform!
+     #view_dump()
