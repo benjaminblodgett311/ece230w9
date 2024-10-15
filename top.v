@@ -22,7 +22,7 @@ module top(
         .A(Adata),
         .B(Bdata),
         .C(Cdata),
-        .D(Ddata),
+        .D(Ddata)
 
     )
 
@@ -37,44 +37,50 @@ module top(
         .EnableA(Abtnc),
         .EnableB(Bbtnc),
         .EnableC(Cbtnc),
-        .EnableD(Dbtnc),
+        .EnableD(Dbtnc)
     )
+
+    wire OutputA;
+    wire OutputB;
+    wire OutputC;
+    wire OutputD;
+
 
      behavioral_d_latch A(
         .Enable(Abtnc),
         .Data(Adata),
-        .Q(led[15:8]),
+        .Q(OutputA)
         
     )
 
     behavioral_d_latch B(
         .Enable(BbtnC),
         .Data(Bdata),
-        .Q(led[15:8]),
+        .Q(OutputB)
         
     )
 
     behavioral_d_latch C(
         .Enable(CbtnC),
         .Data(Cdata),
-        .Q(led[15:8]),
+        .Q(OutputC)
         
     )
 
     behavioral_d_latch D(
         .Enable(DbtnC),
         .Data(Ddata),
-        .Q(led[15:8]),
+        .Q(OutputD)
         
     )
 
     multiplexer mux(
-        .A(),
-        .B(),
-        .C(),
-        .D(),
-        .Sel(),
-        .Y()
+        .A(OutputA),
+        .B(OutputB),
+        .C(OutputC),
+        .D(OutputD),
+        .Sel(sw[7:6]),
+        .Y(led[15:8])
     )
    
 
