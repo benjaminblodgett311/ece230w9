@@ -1,5 +1,5 @@
 module mux(
-    input [3:0] A, B, C, D, 
+    input [8:0] A, B, C, D, 
     input Enable,
     input [1:0] Sel,
     output [3:0] Y 
