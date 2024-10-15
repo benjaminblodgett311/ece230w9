@@ -4,8 +4,7 @@ module demultiplexer_btnc (
     output reg EnableA, 
     output reg EnableB,
     output reg EnableC,
-    output reg EnableD,
-
+    output reg EnableD
 );
 
     always @(*) begin

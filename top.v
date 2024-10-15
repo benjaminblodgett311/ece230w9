@@ -1,15 +1,16 @@
 module top(
     input [15:6] sw,
     input btnC,
-    output [15:8] led
+    output [15:8] led,
+    output [1:0] led_p1
 );
 
     behavioral_d_latch partOne(
         .Enable(btnC),
         .Data(sw[0]),
-        .Q(led[0]),
-        .NotQ(led[1])
-    )
+        .Q(led_p1[0]),
+        .NotQ(led_p1[1])
+    );
 
     wire Adata;
     wire Bdata;
@@ -23,8 +24,7 @@ module top(
         .B(Bdata),
         .C(Cdata),
         .D(Ddata)
-
-    )
+    );
 
     wire Abtnc;
     wire Bbtnc;
@@ -32,13 +32,13 @@ module top(
     wire Dbtnc;
 
     demultiplexer_btnc btnc(
-        .data(btnc),
+        .data(btnC),
         .sel(sw[7:6]),
         .EnableA(Abtnc),
         .EnableB(Bbtnc),
         .EnableC(Cbtnc),
         .EnableD(Dbtnc)
-    )
+    );
 
     wire OutputA;
     wire OutputB;
@@ -51,37 +51,36 @@ module top(
         .Data(Adata),
         .Q(OutputA)
         
-    )
+    );
 
     behavioral_d_latch B(
-        .Enable(BbtnC),
+        .Enable(Bbtnc),
         .Data(Bdata),
         .Q(OutputB)
         
-    )
+    );
 
     behavioral_d_latch C(
-        .Enable(CbtnC),
+        .Enable(Cbtnc),
         .Data(Cdata),
         .Q(OutputC)
         
-    )
+    );
 
     behavioral_d_latch D(
-        .Enable(DbtnC),
+        .Enable(Dbtnc),
         .Data(Ddata),
         .Q(OutputD)
-        
-    )
+    );
 
-    multiplexer mux(
+    mux m(
         .A(OutputA),
         .B(OutputB),
         .C(OutputC),
         .D(OutputD),
         .Sel(sw[7:6]),
         .Y(led[15:8])
-    )
+    );
    
 
 endmodule
