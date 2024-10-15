@@ -5,13 +5,13 @@ module behavioral_sr_latch(
     output NotQ
 );
 
-    always @(Set, Reset) begin <i class="conum" data-value="2"></i><b>(2)</b>
+    always @(Set, Reset) begin
         if (Set)
-            Q &lt;= 1; <i class="conum" data-value="3"></i><b>(3)</b>
+            Q &lt;= 1;
         else if (Reset)
             Q &lt;= 0;
     end
 
-    assign NotQ = ~Q; <i class="conum" data-value="1"></i><b>(1)</b>
+    assign NotQ = ~Q;
 
 endmodule
