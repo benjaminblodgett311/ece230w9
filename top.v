@@ -11,6 +11,9 @@ module top(
      .NotQ(led[1])
  );
 
+ // A vector here would be a little more convenient
+ // See Appendix 1 of the assignment
+ // Not required, however
  wire [7:0] Adata;
  wire [7:0] Bdata;
  wire [7:0] Cdata;
@@ -72,6 +75,11 @@ module top(
      .Q(OutputD)
  );
 
+ // I would recommend hooking up the enable
+ // signal of your mux or it will always
+ // output zero.
+ // You can also remove it from the
+ // design, we don't need it here
  mux m(
      .A(OutputA),
      .B(OutputB),
