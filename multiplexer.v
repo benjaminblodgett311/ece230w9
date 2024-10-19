@@ -1,8 +1,8 @@
 module mux(
-    input [8:0] A, B, C, D, 
+    input [8:0] A, B, C, D, // These are all actually 9 bits wide
     input Enable,
     input [1:0] Sel,
-    output [3:0] Y 
+    output [3:0] Y // Check your widths. Can't stick an 8 bit signal in a 4 bit hole
 );
 
 assign Y = Enable ? (
