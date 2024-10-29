@@ -77,6 +77,7 @@ module top(
      .B(OutputB),
      .C(OutputC),
      .D(OutputD),
+     .Enable(1),
      .Sel(sw[7:6]),
      .Y(led[15:8])
  );

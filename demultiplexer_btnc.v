@@ -9,10 +9,10 @@ module demultiplexer_btnc (
 
     always @(*) begin
         case(sel)
-            2'b00: {EnableD, EnableC, EnableB, EnableA} <= {8'b0, 8'b0, 8'b0, data};
-            2'b01: {EnableD, EnableC, EnableB, EnableA} <= {8'b0, 8'b0, data, 8'b0};
-            2'b10: {EnableD, EnableC, EnableB, EnableA} <= {8'b0, data, 8'b0, 8'b0};
-            2'b11: {EnableD, EnableC, EnableB, EnableA} <= {data, 8'b0, 8'b0, 8'b0};
+            2'b00: {EnableD, EnableC, EnableB, EnableA} <= {1'b0, 1'b0, 1'b0, data};
+            2'b01: {EnableD, EnableC, EnableB, EnableA} <= {1'b0, 1'b0, data, 1'b0};
+            2'b10: {EnableD, EnableC, EnableB, EnableA} <= {1'b0, data, 1'b0, 1'b0};
+            2'b11: {EnableD, EnableC, EnableB, EnableA} <= {data, 1'b0, 1'b0, 1'b0};
         endcase
     end
 
